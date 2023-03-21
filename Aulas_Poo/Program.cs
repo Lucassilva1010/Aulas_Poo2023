@@ -14,7 +14,93 @@ namespace Aulas_Poo
             Pessoa pessoa1 = new Pessoa();
             Pessoa pessoa2 = new Pessoa();
 
-            Console.WriteLine("Qual o seu nome? ");
+            Funcionario funcionario1 = new Funcionario();
+            Funcionario funcionario2 = new Funcionario();
+
+            Produto p = new Produto();
+
+            // cadastro de produtos
+            System.Console.Write("Qual o nome do produto que deseja cadastrar: ");
+            p.Nome = Console.ReadLine();
+            Console.Write("Qual o valor do Produto: ");
+            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write($"Quantos {p.Nome} vão ser cadastrados: ");
+            p.Quantidade = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("\t--------");
+
+            //Atualização de Estoque
+            Console.Write("Quantidade em Estoque: " + p.Quantidade + "\n");
+            Console.WriteLine();
+            Console.WriteLine("\t---Resumo do Estoque-----");
+            Console.WriteLine("Dados do Atualizados: " + p);
+            Console.WriteLine("---------------------------");
+
+            //Movimentação de Estoque
+            Console.WriteLine();
+            Console.Write("Digite o numero de produtos a ser Adicionado: ");
+            int quantidade = int.Parse(Console.ReadLine());
+            p.AdicionarProduto(quantidade);
+            Console.WriteLine();
+            
+            Console.WriteLine("\t---Resumo do Estoque-----");
+            Console.WriteLine("Dados do Atualizados: " + p);
+            Console.WriteLine("---------------------------");
+
+            Console.Write("Digite o numero de produtos a ser Removidos: ");
+            quantidade = int.Parse(Console.ReadLine());
+            p.Removerprodutos(quantidade);
+
+            Console.WriteLine();
+            Console.WriteLine("\t---Resumo do Estoque-----");
+            Console.WriteLine("Dados do Atualizados: " + p);
+            Console.WriteLine("---------------------------");
+
+            Console.ReadLine();
+
+
+            
+
+
+
+
+
+
+
+
+
+            //Comparação salario entre 2 funcionarios
+            /* Console.WriteLine("Qual o nome do funcionario 01? ");
+             funcionario1.nome = Console.ReadLine();
+             Console.WriteLine("Qual o valor salarial do 2ª funcionario? ");
+             funcionario1.salrio = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+
+             Console.WriteLine("Qual o nome do funcionario 02? ");
+             funcionario2.nome = Console.ReadLine();
+             Console.WriteLine("Qual o valor salarial do 2ª funcionario? ");
+             funcionario2.salrio = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+
+             double media = (funcionario1.salrio + funcionario2.salrio) / 2;
+
+             if (funcionario1.salrio>funcionario2.salrio)
+             {
+                 Console.WriteLine($"{funcionario1.nome}, Tem o maior salario.");
+             }
+             else
+             {
+                 Console.WriteLine($"{funcionario2.nome}, Tem o maior Salario.");
+             }
+
+             Console.WriteLine($"A media salarial entre os 2 funcionarios são: {media.ToString("f3",CultureInfo.InvariantCulture)}");
+            */
+
+
+
+
+
+
+            //Programa que compara e verifica a pessoa mais velha
+            /*Console.WriteLine("Qual o seu nome? ");
             pessoa1.nome =Console.ReadLine();
             Console.WriteLine("Qual a sua Idade? ");
             pessoa1.idade = int.Parse(Console.ReadLine());
@@ -32,12 +118,12 @@ namespace Aulas_Poo
             else
             {
                 Console.WriteLine($"{pessoa2.nome}, é a Pessoa masi velha!");
-            }
+            }*/
 
 
 
             //Dados para calcular um Triangulo
-           /* Console.WriteLine("Entre com as medidas do triagulo X");
+            /*Console.WriteLine("Entre com as medidas do triagulo X");
             x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
@@ -47,12 +133,9 @@ namespace Aulas_Poo
             y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double p = (x.A + x.B + x.C) / 2.0;
-            double areaX = Math.Sqrt(p * (p - x.A) * (p - x.B) * (p - x.C));
 
-            p = (y.A + y.B + y.C) / 2.0;
-            double areaY = Math.Sqrt(p * (p - y.A) * (p - y.B) * (p - y.C));
-
+            double areaX = x.Area();
+            double areaY = y.Area();
             Console.WriteLine($"Area de X: {areaX.ToString("F4", CultureInfo.InvariantCulture)}");
             Console.WriteLine($"Area de y: {areaY.ToString("F4", CultureInfo.InvariantCulture)}");
 
