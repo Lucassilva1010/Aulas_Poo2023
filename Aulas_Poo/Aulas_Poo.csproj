@@ -45,7 +45,11 @@
   <ItemGroup>
     <Compile Include="Funcionario.cs" />
     <Compile Include="Pessoa.cs" />
+    <Compile Include="Produto3.cs" />
+    <Compile Include="Produto2.cs" />
     <Compile Include="Produto.cs" />
+    <Compile Include="ProdutoEncapsuladoProperties.cs" />
+    <Compile Include="ProdutoEncapsulado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triagulo.cs" />
