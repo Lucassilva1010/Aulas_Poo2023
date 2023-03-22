@@ -21,15 +21,23 @@ namespace Aulas_Poo
             Produto p = new Produto();
             
             ProdutoEncapsulado produto2 = new ProdutoEncapsulado("lucas",200.00);
+            ProdutoEncapsuladoAutoPro produtoAuto = new ProdutoEncapsuladoAutoPro("Antonella",200.00);
 
-            Console.WriteLine("qual o nome?");
+           
             ProdutoEncapsuladoProperties produtoP = new ProdutoEncapsuladoProperties {
               
             Nome = Console.ReadLine()
             
             };
 
-            Console.WriteLine( produtoP.Nome );
+            //ProdutoEncapsuladoAutoPro produtoAuto = new ProdutoEncapsuladoAutoPro
+            //{
+              
+            //Nome = Console.ReadLine()
+            
+            //};
+
+            Console.WriteLine( produtoAuto.Nome );
 
 
 

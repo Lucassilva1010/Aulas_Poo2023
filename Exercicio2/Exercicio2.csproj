@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2BB643E8-3CA0-49D6-861C-47FF01F92A58}</ProjectGuid>
+    <ProjectGuid>{87B65AC0-7680-4CD7-998C-3F3ACB58B17D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Aulas_Poo</RootNamespace>
-    <AssemblyName>Aulas_Poo</AssemblyName>
+    <RootNamespace>Exercicio2</RootNamespace>
+    <AssemblyName>Exercicio2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Funcionario.cs" />
-    <Compile Include="Pessoa.cs" />
-    <Compile Include="Produto3.cs" />
-    <Compile Include="Produto2.cs" />
-    <Compile Include="Produto.cs" />
-    <Compile Include="ProdutoEncapsuladoAutoPro.cs" />
-    <Compile Include="ProdutoEncapsuladoProperties.cs" />
-    <Compile Include="ProdutoEncapsulado.cs" />
+    <Compile Include="Conta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Triagulo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
