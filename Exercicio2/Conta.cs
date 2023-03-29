@@ -9,11 +9,12 @@ namespace Exercicio2
 {
     public class Conta
     {
-        public string Nome { get; private set; }
-        public int NumeroConta { get; set; }
-        public double Saldo { get; set; }
+        public int NumeroConta { get; private set; }
+        public double Saldo { get; private set; }
+        public string Nome { get; set; }
+       
 
-        public Conta(string nome, int numeroConta): this()
+        public Conta(string nome, int numeroConta) : this()
         {
             Nome = nome;
             NumeroConta = numeroConta;
@@ -23,25 +24,25 @@ namespace Exercicio2
         {
             Saldo = 0.0;
         }
-        public Conta(Double saldo) : this()
+        public Conta(Double depositoInicial) : this()
         {
-            Saldo = saldo;
+            Deposito(depositoInicial);
         }
 
-        public void Deposito(double saldo)
+        public void Deposito(double valor)
         {
-            Saldo += saldo;
+            Saldo += valor;
         }
         public void Saque(double saque)
         {
-            Saldo = (Saldo - saque)-5;
+            Saldo = (Saldo - saque) - 5;
         }
 
         public override string ToString()
         {
-            return "Titular: "+Nome
-                +", Conta:  "+NumeroConta+
-                " Valor do Saldo é: $"+Saldo.ToString("f2",CultureInfo.CurrentCulture);
+            return "Titular: " + Nome
+                + ", Conta:  " + NumeroConta +
+                " Valor do Saldo é: $" + Saldo.ToString("f2", CultureInfo.CurrentCulture);
         }
     }
 }
