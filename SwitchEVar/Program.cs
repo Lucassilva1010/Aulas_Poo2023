@@ -12,6 +12,24 @@ namespace SwitchEVar
         static void Main(string[] args)
         {
 
+            DataTime d = new DataTime();       
+            Console.WriteLine(d.data.ToString("yy/MM/dd"));
+            Console.WriteLine(d.time.TotalSeconds);
+
+            DateTime data = DateTime.Now.ToLocalTime();
+            DateTime data2 = DateTime.Now.ToUniversalTime();
+            DateTime data3 = DateTime.Now.ToUniversalTime();
+            Console.WriteLine(data);
+            Console.WriteLine(data2);
+            Console.WriteLine(data3.Kind);
+            Console.WriteLine($"A data da variavel {data}, é uma data: {data.Kind}");
+
+
+            double preco =double.Parse(Console.ReadLine());
+            double valor = (preco < 20 && preco > 10) ? preco+10 : preco-20;
+            Console.WriteLine(valor); 
+
+
             Console.WriteLine("Digite uma das opções para Iniciar o prograa!");
             Console.WriteLine("1 - Tela de boas vindas!");
             Console.WriteLine("2 - Tela de Soma!");
