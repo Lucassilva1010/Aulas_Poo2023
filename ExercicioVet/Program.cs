@@ -11,36 +11,79 @@ namespace ExercicioVet
     {
         static void Main(string[] args)
         {
-            Pensionato[] pen = new Pensionato[10];
+            Pensionato pensionato = new Pensionato();
 
-            Console.Write( "Quantos quartos serão alugados? ");
-            int n = int.Parse( Console.ReadLine() );
 
+
+            Console.WriteLine($"Quartos disponiveis: ");
+
+            foreach (var quarto in pensionato.Quartos)
+            {
+                Console.WriteLine("Número: " + quarto.Numero);
+            }
+
+
+            Console.Write("Quantos quartos serão alugados? ");
+            int n = int.Parse(Console.ReadLine());
+
+           
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine();
-                Console.WriteLine("Alugel "+i+" ");
-                Console.Write("Qual o seu nome? ");
-                string nome = Console.ReadLine();
-                Console.Write("Qual o sue email? ");
-                string email = Console.ReadLine();
+                int quarto = 0;
+                do
+                {
 
-                Console.WriteLine("Qual quarto deseja contratar? ");
-                int quarto = int.Parse(Console.ReadLine());
-                pen[quarto] = new Pensionato(nome, email);
+                    Console.WriteLine();
+                    Console.WriteLine("Alugel " + i + " ");
+                    Console.Write("Qual o seu nome? ");
+                    string nome = Console.ReadLine();
+                    Console.Write("Qual o sue email? ");
+                    string email = Console.ReadLine();
+
+                    Console.WriteLine("Qual quarto deseja contratar? ");
+                     quarto = int.Parse(Console.ReadLine());
+                    
+                    if (pensionato.Quartos[quarto - 1].Usuario == null)
+                    {
+                        pensionato.Quartos[quarto-1].Usuario = new Usuario(nome, email);
+                        pensionato.Quartos[quarto-1].Ocupacao = true;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Quarto já Ocupado!\n Escolha um novo quarto!");
+
+                        Console.WriteLine($"Quartos disponiveis: ");
+
+                        foreach (var quartoLista in pensionato.Quartos.Where(q => q.Ocupacao == false))
+                        {
+                            Console.WriteLine("Número: " + quartoLista.Numero);
+                        }
+                        quarto = 0;
+
+
+                    }
+                } while (quarto==0);
+
+                
+
             }
 
             Console.WriteLine();
             Console.WriteLine("Quartos Ocupados");
-            for (int i = 0;i < 10;i++)
+
+           
+            for (int i = 0; i < pensionato.Quartos.Length; i++)
             {
-                if (pen[i] !=null)
+                if (pensionato.Quartos[i].Ocupacao  == true)
                 {
-                    Console.WriteLine(i + " - " + pen[i] );
+                    Console.WriteLine( pensionato.Quartos[i].Numero);
                 }
 
+               
+
             }
-            
+
         }
     }
 }

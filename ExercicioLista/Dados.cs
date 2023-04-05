@@ -29,16 +29,12 @@ namespace ExercicioLista
             Salario = sal;
             Nome = nome;
            
-            if(ID.Equals(ID))
-            {
+          
+            
                 Console.WriteLine("Aumento concedido pra você: "+nome);
                 sal += (Salario * 0.05);
                 Console.WriteLine($"Seu novo salario é de: {sal}");
-                
-            }else if (ID!= ID)
-            {
-                Console.WriteLine("Não possui aumento");
-            }
+           
         }
 
       

@@ -9,6 +9,13 @@ namespace Aulas_Poo
     internal class Funcionario
     {
         public string nome;
-        public double salrio;
+        public double salrio { get; private set; }
+
+        public Funcionario()
+        {
+            salrio = 0.0;
+        }
+
+
     }
 }

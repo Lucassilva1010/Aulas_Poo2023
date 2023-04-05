@@ -21,6 +21,8 @@ namespace Aulas_Poo
             Produto p = new Produto();
             
             ProdutoEncapsulado produto2 = new ProdutoEncapsulado("lucas",200.00);
+            ProdutoEncapsulado produto3 = new ProdutoEncapsulado();
+
             ProdutoEncapsuladoAutoPro produtoAuto = new ProdutoEncapsuladoAutoPro("Antonella",200.00);
 
            

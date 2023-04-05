@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -12,37 +13,55 @@ namespace ExercicioLista
     {
         static void Main(string[] args)
         {
-            List<Dados> dado = new List<Dados>();
-            Dados dados1 = new Dados();
+            //int numeroEscolhido = new Random().Next(1,4);
+            List<Dados> dados = new List<Dados>();
+
 
             Console.WriteLine("Quantos funcionarios: ");
             int numeroFun = int.Parse(Console.ReadLine());
 
-            string nome="";
-            double sal=0;
 
-            for (int i=0; i<numeroFun;i++)
+            for (int i = 0; i < numeroFun; i++)
             {
-                Console.WriteLine("Digite os dados do "+i+" Funcionario: ");
-               
+
+                Console.WriteLine("Digite os dados do " + i + " Funcionario: ");
+
                 Console.Write("Nome: ");
-                 nome =Console.ReadLine();
+                string nome = Console.ReadLine();
                 Console.Write("valor do Salario: ");
-                 sal = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
-                dado.Add(new Dados() { Nome = nome, Salario = sal });
-               
+                double sal = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                dados.Add(new Dados() { Nome = nome, Salario = sal });
+
             }
             Console.Clear();
+            var grupos = dados.GroupBy(dado => dado.ID);
+
 
             Console.WriteLine("Lista de Funcionarios cadastrados ");
-            foreach (Dados dados in dado)
+            foreach (var grupo in grupos)
             {
-                Console.WriteLine(dados);
+                if (grupo.Count() > 1)
+                {
+
+                    foreach (var dado in grupo)
+                    {
+                        dado.Aumento(dado.Salario, dado.Nome);
+                        Console.WriteLine(dado);
+                    }
+                }else
+                {
+
+                    foreach (var dado in grupo)
+                    { 
+                        Console.WriteLine($"{dado.Nome} Não possui aumento: ");
+                    }
+                }
+
+
             }
 
-             Console.WriteLine();
             Console.WriteLine();
-            dados1.Aumento(sal,nome);
+            Console.ReadLine();
         }
     }
 }
