@@ -42,7 +42,7 @@ namespace EunumeracoesCompo.Entities.Enums
             string vari = Estados.Pe.ToString();
             Console.WriteLine("Aqui está transformado: " + vari);
 
-            //convertendo para tipo enums
+            //convertendo DE STRINGS para tipo enums
 
                     //int valorInteiro = 1;
                     //MeuEnum valorEnum = (MeuEnum)Enum.ToObject(typeof(MeuEnum), valorInteiro);
