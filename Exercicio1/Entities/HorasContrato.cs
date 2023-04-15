@@ -12,6 +12,7 @@ namespace Exercicio1.Entities
         public DateTime Data { get; set; }
         public double ValorDaHora { get; set; }
         public int Horas { get; set; }
+        public Trabalhador trabalhador { get; set; }
 
         public HorasContrato()
         {

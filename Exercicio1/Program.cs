@@ -15,14 +15,22 @@ namespace Exercicio1
         static void Main(string[] args)
         {
            
-
+           
             Console.Write("Qual o Nome do seu Departamento? ");
             string departamento = Console.ReadLine();
             Console.WriteLine("Entre com uma data:  ");//Pensar como seria aqui.
             Console.Write("Seu nome é: ");
             string nome = Console.ReadLine();
-            Console.Write("Qual o seu nivel? (Junio - Pleno - Sênior):   ");
-            NivelTrabalhador nivel = (NivelTrabalhador)Enum.Parse(typeof(NivelTrabalhador), Console.ReadLine(),true);
+            Console.WriteLine("Qual o seu nivel? (Junior - Pleno - Sênior):   ");
+
+            foreach (var item in Enum.GetValues(typeof(NivelTrabalhador)))
+            {
+
+                Console.WriteLine(  $"{(int)item} - {item}");
+            }
+
+            NivelTrabalhador nivel = (NivelTrabalhador)Enum.Parse(typeof(NivelTrabalhador), Console.ReadLine(), true);
+
             Console.Write("Salario Base: ");
             double salBase = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
 
