@@ -20,34 +20,27 @@ namespace Exercicio01
             int numero = int.Parse(Console.ReadLine());
             for (int i = 0; i < numero; i++)
             {
-                Console.WriteLine($"Funcionario {i}");
+                Console.WriteLine($"Funcionario #{i}");
                 Console.Write("O funcioario é Terceirizado? ");
                 string resposta = Console.ReadLine();
-
-                if (resposta.ToLower()is "s" )
-                {
+                                             
                     Console.Write("Nome: ");
                     string nomee = Console.ReadLine();
                     Console.Write("Horas Trabalhadas: ");
                     int qantHoras = int.Parse(Console.ReadLine());
                     Console.Write("Valor da Hora: ");
                     double valorH = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+                    
+                
+                if (resposta.ToLower() is "s")
+                {
                     Console.Write("Valor da Hora Adicional: ");
-                    double valorHAdd = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
-
-
+                    double valorHAdd = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                     funcionarios.Add(new FuncionarioTerceirizados(nomee,qantHoras,valorH,valorHAdd));
 
-                }
-                else
+                }else
                 {
-                    Console.Write("Nome: ");
-                    string nomee = Console.ReadLine();
-                    Console.Write("Horas Trabalhadas: ");
-                    int qantHoras = int.Parse(Console.ReadLine());
-                    Console.Write("Valor da Hora: ");
-                    double valorH = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                   
+                                   
                     funcionarios.Add(new Funcionario(nomee, qantHoras, valorH));
 
                 }
@@ -58,10 +51,14 @@ namespace Exercicio01
             {
                 if (funcionario is FuncionarioTerceirizados)
                 {
-                    Console.WriteLine($"  {(funcionario as FuncionarioTerceirizados).Nome}");
+                    Console.WriteLine($"  {(funcionario as FuncionarioTerceirizados).Nome} - {(funcionario as FuncionarioTerceirizados).Pagamento().ToString("f2",CultureInfo.InvariantCulture }");
+                }
+                else
+                {
+                Console.WriteLine($"  {funcionario.Nome} - {funcionario.Pagamento().ToString("f2",CultureInfo.InvariantCulture)}");
+
                 }
                
-                Console.WriteLine($"  {funcionario}");
            }
         }
     }
