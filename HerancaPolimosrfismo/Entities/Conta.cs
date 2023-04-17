@@ -23,9 +23,9 @@ namespace HerancaPolimosrfismo.Entities
             Titular = titular;
             Saldo = saldo;
         }
-         public void Saque(double quantia)
+         public virtual void Saque(double quantia)
         {
-            Saldo -= quantia;
+            Saldo -= quantia+5.0;//TaXA DE 5 reais para saques
         }
 
         public void Deposito(double quantia)

@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Capitulo10", "Capitulo10", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerancaPolimosrfismo", "HerancaPolimosrfismo\HerancaPolimosrfismo.csproj", "{79CF4290-F809-46D1-95BF-B1081144562F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercicio01", "Exercicio01\Exercicio01.csproj", "{47D4AEB6-464B-4F19-8425-B8965C52492D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,10 @@ Global
 		{79CF4290-F809-46D1-95BF-B1081144562F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79CF4290-F809-46D1-95BF-B1081144562F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79CF4290-F809-46D1-95BF-B1081144562F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D4AEB6-464B-4F19-8425-B8965C52492D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D4AEB6-464B-4F19-8425-B8965C52492D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D4AEB6-464B-4F19-8425-B8965C52492D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D4AEB6-464B-4F19-8425-B8965C52492D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{06E416B9-54E3-4D20-9D5C-CAC262C3779F} = {8190CFB4-E4A4-4DDD-9878-FA9EAB935647}
 		{F2CE1952-95FA-4E30-A32F-E3EB9B5F0601} = {8190CFB4-E4A4-4DDD-9878-FA9EAB935647}
 		{79CF4290-F809-46D1-95BF-B1081144562F} = {AAC8B37C-1C12-459A-A9E7-8A4A83CDEBDE}
+		{47D4AEB6-464B-4F19-8425-B8965C52492D} = {AAC8B37C-1C12-459A-A9E7-8A4A83CDEBDE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49B186E8-1CAE-4A91-965C-F1C23A73605C}

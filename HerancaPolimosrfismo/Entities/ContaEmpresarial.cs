@@ -1,4 +1,4 @@
-﻿namespace HerancaPolimosrfismo.Entities
+﻿ namespace HerancaPolimosrfismo.Entities
 {
     internal class ContaEmpresarial : Conta
     {
@@ -30,6 +30,15 @@
             {
                 Saldo = Saldo + quantia - 10.0;
             }
+        }
+
+        //Sobrescrita
+        public override void Saque(double quantia)
+        {
+            //base.Saque(quantia);
+            //Saldo -= 10.00;
+            
+            Saldo -= quantia+2;
         }
     }
 }
