@@ -51,7 +51,8 @@ namespace Exercicio01
             {
                 if (funcionario is FuncionarioTerceirizados)
                 {
-                    Console.WriteLine($"  {(funcionario as FuncionarioTerceirizados).Nome} - {(funcionario as FuncionarioTerceirizados).Pagamento().ToString("f2",CultureInfo.InvariantCulture }");
+                    Console.WriteLine($"  {(funcionario as FuncionarioTerceirizados).Nome} " +
+                        $"- {(funcionario as FuncionarioTerceirizados).Pagamento().ToString("f2",CultureInfo.InvariantCulture )}");
                 }
                 else
                 {
