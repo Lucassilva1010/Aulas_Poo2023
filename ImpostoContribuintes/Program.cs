@@ -49,6 +49,8 @@ namespace ImpostoContribuintes
             Console.WriteLine();
             Console.WriteLine("IMPOSTOS de PAGOS");
             Console.WriteLine();
+            
+            var resultado = 0.0;
 
             foreach (Pessoa pessoa in pessoas)
             {
@@ -57,20 +59,22 @@ namespace ImpostoContribuintes
 
                     Console.WriteLine($" {(pessoa as PFisica).Nome}: " +
                         $@" ${(pessoa as PFisica).CalculaImposto().ToString("f2", CultureInfo.InvariantCulture)}");
+
+                    resultado += pessoa.CalculaImposto();
+                    Console.WriteLine($"Salario após o desconto: {pessoa.RendaAnualDescontada}");//fazr essa alteração para o pessoa juridica
                 }
                 else if (pessoa is Pjuridica)
                 {
                     Console.WriteLine($" {(pessoa as Pjuridica).Nome}:  " +
                         $@" ${(pessoa as Pjuridica).CalculaImposto()}");
+
+                    resultado += pessoa.CalculaImposto();
                 }
                 Console.WriteLine();
             }
 
-            foreach (Pessoa p in pessoas)
-            {
-                Console.WriteLine();
-                Console.WriteLine($"Total de Impostos: ${(p as PFisica).CalculaImposto() + (p as Pjuridica).CalculaImposto()}");
-            }
+            Console.WriteLine($"Total de Impostos: ${resultado}");
+            
         }
     }
 }

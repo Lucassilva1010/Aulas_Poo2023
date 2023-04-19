@@ -10,6 +10,9 @@ namespace ImpostoContribuintes.Entities
     {
         public string  Nome { get; set; }
         public double RendaAnual { get; set; }
+
+        public double RendaAnualDescontada { get; set; }
+
         public Pessoa()
         {
             
@@ -19,6 +22,7 @@ namespace ImpostoContribuintes.Entities
         {
             Nome = nome;
             RendaAnual = rendaAnual;
+            
         }
 
         public abstract double CalculaImposto();

@@ -10,6 +10,7 @@ namespace ImpostoContribuintes.Entities
     internal class PFisica : Pessoa
     {
         public double GastoComSaude { get; set; }
+      
 
         public PFisica()
         {
@@ -25,7 +26,7 @@ namespace ImpostoContribuintes.Entities
         {
             double taxaRenda = 0.0;
             double gastoSaude = 0.0;
-
+            
             if (RendaAnual < 20000.00)
             {
 
@@ -37,7 +38,7 @@ namespace ImpostoContribuintes.Entities
                     gastoSaude = GastoComSaude * 0.50;
                     taxaRenda -= gastoSaude;
                 }
-                RendaAnual -= taxaRenda;
+                RendaAnualDescontada = RendaAnual - taxaRenda;//Analisar para colocar em Pessoal em Juridica
 
             }
             else if (RendaAnual > 20000.00)
@@ -53,6 +54,11 @@ namespace ImpostoContribuintes.Entities
             }
 
             return taxaRenda;
+        }
+
+        public void ValorFinal(double rendaAnual)
+        {
+
         }
     }
 }
