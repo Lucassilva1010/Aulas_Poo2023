@@ -25,7 +25,6 @@ namespace SaqueException.Entities
             LimiteDeSaque = limiteDeSaque;
         }
 
-
         public void Deposito(double valor)
         {
             if (valor == 0.0)
@@ -35,7 +34,6 @@ namespace SaqueException.Entities
             Saldo += valor;
            
         }
-
         public void Saque(double valor) {
            
             if (valor > Saldo || valor >LimiteDeSaque)
@@ -45,11 +43,9 @@ namespace SaqueException.Entities
             if (valor <= Saldo)
             {
                // valor -= Saldo;
-                Saldo -= valor;
-               
+                Saldo -= valor;               
             }
         }
-
         public override string ToString()
         {
             return $"{Titular} "+$"O seu saldo Atual é: {Saldo}";
