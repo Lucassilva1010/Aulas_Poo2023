@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Tabuleiro;
 
 namespace JogoXadrez
 {
@@ -10,6 +7,12 @@ namespace JogoXadrez
     {
         static void Main(string[] args)
         {
+
+            Tabuleiroo tabuleiro = new Tabuleiroo(8,8);
+            Tela.ImprimirTabuleiro(tabuleiro);
+
+           
         }
     }
 }
+ 
