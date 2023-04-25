@@ -18,7 +18,7 @@ namespace JogoXadrez
                 {
                     if (tabuleiro.Pecaa(i,j)==null)
                     {
-                        Console.Write("- ");
+                        Console.Write(" - ");
                     }
                     else
                     {
