@@ -18,9 +18,9 @@ namespace Tabuleiro
             
         }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiroo tabuleiro)
+        public Peca( Cor cor, Tabuleiroo tabuleiro)
         {
-            Posicao = posicao;
+            Posicao = null;
             Cor = cor;
             Tabuleiro = tabuleiro;
             QuantidadeMovimento = 0;
