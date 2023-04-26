@@ -10,12 +10,22 @@ namespace JogoXadrez
         {
             try
             {
-                Tabuleiroo tabuleiro = new Tabuleiroo(8, 8);
+              
+                PartidaDeXadrez partida = new PartidaDeXadrez();
+              while (!partida.Terminada)
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab);
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.LerPosicaoXadrez().TrasnformaPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.LerPosicaoXadrez().TrasnformaPosicao();
+                    partida.ExecutaMovimento(origem, destino);
+                }
 
-                PosicaXadrez pos = new PosicaXadrez('c',7);
-                Console.WriteLine(pos);
 
-                Console.WriteLine(pos.TrasnformaPosicao());
+
 
             }
             catch (TabuleiroExecption e)

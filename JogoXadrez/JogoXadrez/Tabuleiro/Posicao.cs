@@ -23,7 +23,7 @@ namespace Tabuleiro
         }
         public override string ToString()
         {
-            return $"{Linha}, "
+            return $"{Linha},"
                 + $"{Coluna}";
         }
     }

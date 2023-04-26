@@ -1,4 +1,6 @@
-﻿namespace Tabuleiro
+﻿using System.CodeDom;
+
+namespace Tabuleiro
 {
      class Tabuleiroo
     {
@@ -26,6 +28,18 @@
             }
             Pecas[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;
+        }
+
+        public Peca RetirarPeca(Posicao pos)
+        {
+            if (Pecaa(pos)==null)
+            {
+                return null;
+            }
+            Peca aux = Pecaa(pos);
+            aux.Posicao = null;
+            Pecas[pos.Linha, pos.Coluna] = null;
+            return aux;
         }
 
         public Peca Pecaa( int linhas, int colunas)
