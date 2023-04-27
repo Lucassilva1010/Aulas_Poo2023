@@ -23,7 +23,7 @@ namespace Tabuleiro
         }
         public void DefinirValores(int linha, int coluna)
         {
-            Linha = linha; 
+            Linha = linha; //Aqui teve um erro
             Coluna = coluna;
         }
         public override string ToString()
