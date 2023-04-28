@@ -15,22 +15,36 @@ namespace JogoXadrez
 
                 while (!partida.Terminada)
                 {
-                    Console.Clear();
-                    Tela.ImprimirTabuleiro(partida.tab);
-                    Console.WriteLine();
+                    try {
 
-                    Console.Write("Origem: ");
-                    Posicao origem = Tela.LerPosicaoXadrez().TrasnformaPosicao();
+                        Console.Clear();
+                        Tela.ImprimirTabuleiro(partida.tab);
+                        Console.WriteLine();
+                        Console.WriteLine($"Turno: {partida.Turno}");
+                        Console.WriteLine($"Aguardando jogadoa: {partida.JogadorAtual}");
 
-                    bool[,] posicoesPossiveis = partida.tab.Pecaa(origem).MovimentosPossiveis();
-                    
-                    Console.Clear();
-                    Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
+                        Console.Write("Origem: ");
+                        Posicao origem = Tela.LerPosicaoXadrez().TrasnformaPosicao();
+                        partida.ValidarPosicaoDeOrigem(origem);
 
-                    Console.WriteLine();
-                    Console.Write("Destino: ");
-                    Posicao destino = Tela.LerPosicaoXadrez().TrasnformaPosicao();
-                    partida.ExecutaMovimento(origem, destino);
+                        bool[,] posicoesPossiveis = partida.tab.Pecaa(origem).MovimentosPossiveis();
+
+                        Console.Clear();
+                        Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                        Console.WriteLine();
+                        Console.Write("Destino: ");
+                        Posicao destino = Tela.LerPosicaoXadrez().TrasnformaPosicao();
+                        
+                        partida.ValidarPosicaoDestino(origem, destino);
+                        partida.RealizaJogada(origem, destino);
+
+                       
+
+                    }catch(TabuleiroExecption ex) { 
+                        Console.WriteLine(ex.Message);
+                        Console.ReadLine();
+                    }
                 }
 
 

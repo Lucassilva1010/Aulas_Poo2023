@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tabuleiro
+﻿namespace Tabuleiro
 {
     abstract class Peca
     {
         public Posicao Posicao { get; set; }
         public Cor Cor { get; protected set; }
-        public int QuantidadeMovimento { get;protected set; }
+        public int QuantidadeMovimento { get; protected set; }
         public Tabuleiroo Tabuleiro { get; protected set; }
 
         public Peca()
         {
-            
+
         }
 
-        public Peca( Cor cor, Tabuleiroo tabuleiro)
+        public Peca(Cor cor, Tabuleiroo tabuleiro)
         {
             Posicao = null;
             Cor = cor;
@@ -29,6 +23,26 @@ namespace Tabuleiro
         public void IncrementaQuantMovimentos()
         {
             QuantidadeMovimento++;
+        }
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] mat = MovimentosPossiveis();
+            for (int i = 0; i < Tabuleiro.Linhas; i++)
+            {
+                for (int j = 0; j < Tabuleiro.Colunas; j++)
+                {
+                    if (mat[i,j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool PodeMoverParaUmaDadaPosicao(Posicao pos)
+        {
+            return MovimentosPossiveis()[pos.Linha, pos.Coluna];
         }
 
         public abstract bool[,] MovimentosPossiveis();
