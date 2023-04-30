@@ -14,12 +14,17 @@ namespace JogoXadrez
     {
         public static void ImprimirPartida(PartidaDeXadrez partida)
         {
-            Tela.ImprimirTabuleiro(partida.tab);
+            ImprimirTabuleiro(partida.tab);
             Console.WriteLine();
             ImprimirPecasCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine($"Turno: {partida.Turno}");
             Console.WriteLine($"Aguardando jogadoa: {partida.JogadorAtual}");
+            if (partida.Xeque)
+            {
+                Console.WriteLine("Você está em XEQUE!");
+            }
+
         } 
         public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
         {
