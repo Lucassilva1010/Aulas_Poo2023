@@ -19,10 +19,18 @@ namespace JogoXadrez
             ImprimirPecasCapturadas(partida);
             Console.WriteLine();
             Console.WriteLine($"Turno: {partida.Turno}");
-            Console.WriteLine($"Aguardando jogadoa: {partida.JogadorAtual}");
-            if (partida.Xeque)
+            if (!partida.Terminada)
             {
-                Console.WriteLine("Você está em XEQUE!");
+
+                Console.WriteLine($"Aguardando jogadoa: {partida.JogadorAtual}");
+                if (partida.Xeque)
+                {
+                    Console.WriteLine("Você está em XEQUE!");
+                }
+            }
+            else {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine($"O vencedor é: {partida.JogadorAtual}");
             }
 
         } 
