@@ -45,7 +45,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xadrez\Bispo.cs" />
+    <Compile Include="Xadrez\Cavalo.cs" />
     <Compile Include="Tabuleiro\Cor.cs" />
+    <Compile Include="Xadrez\Dama.cs" />
+    <Compile Include="Tabuleiro\Peao.cs" />
     <Compile Include="Tabuleiro\Peca.cs" />
     <Compile Include="Tabuleiro\Posicao.cs" />
     <Compile Include="Tabuleiro\TabuleiroExecption.cs" />
