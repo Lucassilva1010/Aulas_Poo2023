@@ -33,9 +33,9 @@
         public bool ExisteMovimentosPossiveis()
         {
             bool[,] mat = MovimentosPossiveis();
-            for (int i = 0; i < Tabuleiro.Linhas; i++)
+            for (int i = 0; i<Tabuleiro.Linhas; i++)
             {
-                for (int j = 0; j < Tabuleiro.Colunas; j++)
+                for (int j = 0; j<Tabuleiro.Colunas; j++)
                 {
                     if (mat[i,j])
                     {

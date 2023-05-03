@@ -19,6 +19,19 @@ namespace Tabuleiro
             this.Colunas = colunas;
             Pecas = new Peca[linhas, colunas];
         }
+        public Peca Pecaa(int linha, int coluna)
+        {
+            return Pecas[linha , coluna];
+        }
+        public Peca Pecaa(Posicao pos)
+        {
+            return Pecas[pos.Linha, pos.Coluna];
+        }
+        public bool ExistePeca(Posicao pos)
+        {
+            ValidarPosicao(pos);
+            return Pecaa(pos) != null;
+        }
 
         public void ColocarPeca(Peca p, Posicao pos)
         {
@@ -42,20 +55,9 @@ namespace Tabuleiro
             return aux;
         }
 
-        public Peca Pecaa( int linhas, int colunas)
-        {
-            return Pecas[linhas,colunas];
-        }
-        public Peca Pecaa(Posicao pos)
-        {
-            return Pecas[pos.Linha, pos.Coluna];
-        }
+        
 
-        public bool ExistePeca(Posicao pos)
-        {
-            ValidarPosicao(pos);
-            return Pecaa(pos) != null;
-        }
+       
 
         public bool PosicaoValida(Posicao pos)
         {

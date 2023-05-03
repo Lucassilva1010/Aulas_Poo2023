@@ -21,7 +21,7 @@ namespace Xadrez
         private bool ExisteInimigo(Posicao pos)
         {
             Peca p = Tabuleiro.Pecaa(pos);
-            return p != null || p.Cor != Cor;
+            return p != null && p.Cor != Cor;
         }
         private bool Livre(Posicao pos)
         {
@@ -37,7 +37,7 @@ namespace Xadrez
             {
                 //NO
                 pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna );
-                if (Tabuleiro.PosicaoValida(pos) && Livre(pos))
+                if (Tabuleiro.PosicaoValida(pos) && Livre(pos) )
                 {
                     mat[pos.Linha, pos.Coluna] = true;
 
