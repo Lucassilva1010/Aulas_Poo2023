@@ -9,10 +9,15 @@ namespace Xadrez
 {
     internal class Dama:Peca
     {
-        public Dama(Cor cor, Tabuleiroo tabuleiro) : base(cor, tabuleiro)
-        {
+        public Tabuleiroo Tab { get; }
 
+       
+        public Dama(Tabuleiroo tab, Cor cor)
+        {
+            Tab = tab;
+            Cor = cor;
         }
+
         public override string ToString()
         {
             return "D";
