@@ -16,6 +16,7 @@ namespace ExtensaoDeMetodos
 
             string s1 = "Bom dia Estudantes!";
             Console.WriteLine(s1.Cut(8));
+            
         }
     }
-}
+}  
